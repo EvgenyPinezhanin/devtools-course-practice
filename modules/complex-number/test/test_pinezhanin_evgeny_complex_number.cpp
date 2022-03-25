@@ -59,7 +59,7 @@ TEST(Pinezhanin_Evgeny_ComplexNumberTest, can_change_im_complex_number) {
     ASSERT_DOUBLE_EQ(z.getIm(), im_new);
 }
 
-TEST(Pinezhanin_Evgeny_ComplexNumberTest, can_compare_for_equality_complex_numbers) {
+TEST(Pinezhanin_Evgeny_ComplexNumberTest, can_compare_equal_numbers) {
     double re = 3.0;
     double im = 2.0;
     ComplexNumber z1(re, im);
@@ -68,7 +68,7 @@ TEST(Pinezhanin_Evgeny_ComplexNumberTest, can_compare_for_equality_complex_numbe
     ASSERT_EQ(z1, z2);
 }
 
-TEST(Pinezhanin_Evgeny_ComplexNumberTest, can_compare_for_inequality_complex_numbers) {
+TEST(Pinezhanin_Evgeny_ComplexNumberTest, can_compare_inequal_numbers) {
     double re1 = 3.0, re2 = 5.0;
     double im1 = 2.0, im2 = 7.5;
     ComplexNumber z1(re1, im1);
