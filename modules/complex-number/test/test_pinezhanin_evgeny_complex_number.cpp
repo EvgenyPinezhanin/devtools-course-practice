@@ -10,8 +10,8 @@ TEST(Pinezhanin_Evgeny_ComplexNumberTest, can_create_copied_complex_number) {
     ComplexNumber z(re, im);
     ComplexNumber z_copy(z);
 
-    ASSERT_EQ(z_copy.getRe(), z.getRe());
-    ASSERT_EQ(z_copy.getIm(), z.getIm());
+    ASSERT_DOUBLE_EQ(z_copy.getRe(), z.getRe());
+    ASSERT_DOUBLE_EQ(z_copy.getIm(), z.getIm());
 }
 
 TEST(Pinezhanin_Evgeny_ComplexNumberTest, can_assign_complex_number) {
@@ -21,8 +21,8 @@ TEST(Pinezhanin_Evgeny_ComplexNumberTest, can_assign_complex_number) {
     ComplexNumber z_assign;
     z_assign = z;
 
-    ASSERT_EQ(z_assign.getRe(), z.getRe());
-    ASSERT_EQ(z_assign.getIm(), z.getIm());
+    ASSERT_DOUBLE_EQ(z_assign.getRe(), z.getRe());
+    ASSERT_DOUBLE_EQ(z_assign.getIm(), z.getIm());
 }
 
 TEST(Pinezhanin_Evgeny_ComplexNumberTest, can_get_re_complex_number) {
@@ -30,7 +30,7 @@ TEST(Pinezhanin_Evgeny_ComplexNumberTest, can_get_re_complex_number) {
     double im = 2.0;
     ComplexNumber z(re, im);
 
-    ASSERT_EQ(z.getRe(), re);
+    ASSERT_DOUBLE_EQ(z.getRe(), re);
 }
 
 TEST(Pinezhanin_Evgeny_ComplexNumberTest, can_get_im_complex_number) {
@@ -38,7 +38,7 @@ TEST(Pinezhanin_Evgeny_ComplexNumberTest, can_get_im_complex_number) {
     double im = 2.0;
     ComplexNumber z(re, im);
 
-    ASSERT_EQ(z.getIm(), im);
+    ASSERT_DOUBLE_EQ(z.getIm(), im);
 }
 
 TEST(Pinezhanin_Evgeny_ComplexNumberTest, can_change_re_complex_number) {
@@ -47,7 +47,7 @@ TEST(Pinezhanin_Evgeny_ComplexNumberTest, can_change_re_complex_number) {
     ComplexNumber z(re, im);
     z.setRe(re_new);
 
-    ASSERT_EQ(z.getRe(), re_new);
+    ASSERT_DOUBLE_EQ(z.getRe(), re_new);
 }
 
 TEST(Pinezhanin_Evgeny_ComplexNumberTest, can_change_im_complex_number) {
@@ -56,7 +56,7 @@ TEST(Pinezhanin_Evgeny_ComplexNumberTest, can_change_im_complex_number) {
     ComplexNumber z(re, im);
     z.setIm(im_new);
 
-    ASSERT_EQ(z.getIm(), im_new);
+    ASSERT_DOUBLE_EQ(z.getIm(), im_new);
 }
 
 TEST(Pinezhanin_Evgeny_ComplexNumberTest, can_compare_for_equality_complex_numbers) {
