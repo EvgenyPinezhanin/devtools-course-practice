@@ -123,7 +123,7 @@ TEST(Pinezhanin_Evgeny_ComplexNumberTest, can_divide_complex_numbers) {
 
 TEST(Pinezhanin_Evgeny_ComplexNumberTest, cant_divide_by_zero) {
     double re1 = 5.0, re2 = 0.0;
-    double im1 = 2.0, im2 = 0.0;
+    double im1 = 3.0, im2 = 0.0;
     ComplexNumber z1(re1, im1);
     ComplexNumber z2(re2, im2);
 
