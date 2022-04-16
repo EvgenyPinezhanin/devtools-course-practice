@@ -10,7 +10,7 @@ using std::vector;
 class ConwaysLife {
  private:
     vector<vector<bool>> *grid;
-    
+
  public:
     ConwaysLife();
     ConwaysLife(const ConwaysLife &cl);
