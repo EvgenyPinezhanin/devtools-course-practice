@@ -27,3 +27,8 @@ void ConwaysLife::setGrid(const std::vector<std::vector<bool>> &_grid) {
 std::vector<std::vector<bool>> ConwaysLife::getGrid() {
     return *grid;
 }
+
+void ConwaysLife::nextGen() {
+    // code
+    initGrid();
+}

@@ -18,7 +18,7 @@ class ConwaysLife {
     void setGrid(const std::vector<std::vector<bool>> &_grid);
     std::vector<std::vector<bool>> getGrid();
 
-    void newGen();
+    void nextGen();
 };
 
 #endif  // MODULES_CONWAYS_LIFE_INCLUDE_CONWAYS_LIFE_H_
