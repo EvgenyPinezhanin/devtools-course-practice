@@ -15,7 +15,8 @@ ConwaysLife::ConwaysLife() : grid(new std::vector<std::vector<bool>>) {
     initGrid();
 }
 
-ConwaysLife::ConwaysLife(const ConwaysLife &cl) : grid(new std::vector<std::vector<bool>>) {
+ConwaysLife::ConwaysLife(const ConwaysLife &cl)
+    : grid(new std::vector<std::vector<bool>>) {
     *grid = *(cl.grid);
 }
 
