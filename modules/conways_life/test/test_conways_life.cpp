@@ -4,6 +4,8 @@
 
 #include "include/conways_life.h"
 
+#include <vector>
+
 TEST(conways_life, default_constructor) {
     ASSERT_NO_THROW(ConwaysLife life);
 }
@@ -15,7 +17,7 @@ TEST(conways_life, get_default_grid) {
                                              {0, 0, 0, 0, 0},
                                              {0, 0, 0, 0, 0},
                                              {0, 0, 0, 0, 0} };
-    std::vector<std::vector<bool>> grid = life.getGrid(); 
+    std::vector<std::vector<bool>> grid = life.getGrid();
     ASSERT_EQ(def_grid, grid);
 }
 
