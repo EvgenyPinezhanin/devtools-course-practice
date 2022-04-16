@@ -2,4 +2,4 @@
 
 #include "include/conways_life.h"
 
-ConwaysLife::ConwaysLife() { throw "Error"; }
+ConwaysLife::ConwaysLife() : grid(new vector<vector<bool>>) {}

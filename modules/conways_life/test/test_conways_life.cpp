@@ -7,3 +7,7 @@
 TEST(conways_life, default_constructor) {
     ASSERT_NO_THROW(ConwaysLife life);
 }
+
+// TEST(coways_life, default_grid) {
+//     ASSERT
+// }
