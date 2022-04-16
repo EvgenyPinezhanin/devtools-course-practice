@@ -15,6 +15,10 @@ ConwaysLife::ConwaysLife() : grid(new std::vector<std::vector<bool>>) {
     initGrid();
 }
 
+ConwaysLife::ConwaysLife(const ConwaysLife &cl) {
+    // *grid = *(cl.grid);
+}
+
 void ConwaysLife::setGrid(const std::vector<std::vector<bool>> &_grid) {
     (*grid) = _grid;
 }

@@ -20,6 +20,19 @@ TEST(conways_life, get_default_grid) {
     ASSERT_EQ(def_grid, grid);
 }
 
+TEST(conways_life, copy_constructor) {
+    ConwaysLife life;
+    std::vector<std::vector<bool>> grid{ {0, 1, 0, 1, 0},
+                                         {0, 0, 1, 0, 0},
+                                         {0, 0, 0, 0, 1},
+                                         {0, 1, 0, 0, 0},
+                                         {0, 0, 0, 1, 0} };
+    life.setGrid(grid);
+    ConwaysLife new_life(life);
+    std::vector<std::vector<bool>> new_life_grid = new_life.getGrid();
+    ASSERT_EQ(grid, new_life_grid);
+}
+
 TEST(conways_life, can_set_grid_and_get_grid) {
     ConwaysLife life;
     std::vector<std::vector<bool>> grid{ {0, 1, 0, 1, 0},
