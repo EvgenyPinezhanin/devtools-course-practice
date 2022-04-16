@@ -5,18 +5,18 @@
 
 #include <vector>
 
-using namespace std;
+using std::vector;
 
 class ConwaysLife {
-private:
+ private:
     vector<vector<bool>> *grid;
-
-public:
+    
+ public:
     ConwaysLife();
     ConwaysLife(const ConwaysLife &cl);
 
     void setGrid(const vector<vector<bool>> &_grid);
-    void getGrid(vector<vector<bool>> &_grid);
+    vector<vector<bool>> getGrid();
 
     void newGen();
 };
