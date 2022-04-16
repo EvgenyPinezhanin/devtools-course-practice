@@ -2,4 +2,6 @@
 
 #include "include/conways_life.h"
 
-ConwaysLife::ConwaysLife() : grid(new vector<vector<bool>>) {}
+#include <vector>
+
+ConwaysLife::ConwaysLife() : grid(new std::vector<std::vector<bool>>) {}
