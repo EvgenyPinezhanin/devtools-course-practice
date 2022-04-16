@@ -8,7 +8,7 @@ TEST(conways_life, default_constructor) {
     ASSERT_NO_THROW(ConwaysLife life);
 }
 
-TEST(coways_life, get_default_grid) {
+TEST(conways_life, get_default_grid) {
     ConwaysLife life;
     std::vector<std::vector<bool>> def_grid{ {0, 0, 0, 0, 0},
                                              {0, 0, 0, 0, 0},

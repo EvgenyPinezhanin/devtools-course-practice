@@ -9,6 +9,8 @@ class ConwaysLife {
  private:
     std::vector<std::vector<bool>> *grid;
 
+    void initGrid();
+
  public:
     ConwaysLife();
     ConwaysLife(const ConwaysLife &cl);

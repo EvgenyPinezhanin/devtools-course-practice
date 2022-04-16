@@ -4,12 +4,25 @@
 
 #include <vector>
 
-ConwaysLife::ConwaysLife() : grid(new std::vector<std::vector<bool>>) {}
+void ConwaysLife::initGrid() {
+    grid->resize(5);
+    for (int i = 0; i < 5; i++) {
+        (*grid)[i].resize(5, 0);
+    }
+}
+
+ConwaysLife::ConwaysLife() : grid(new std::vector<std::vector<bool>>) {
+    initGrid();
+}
 
 ConwaysLife::ConwaysLife(const ConwaysLife &cl) {}
 
-void ConwaysLife::setGrid(const std::vector<std::vector<bool>> &_grid) {}
+void ConwaysLife::setGrid(const std::vector<std::vector<bool>> &_grid) {
+    (*grid) = _grid;
+}
 
-std::vector<std::vector<bool>> ConwaysLife::getGrid() { return std::vector<std::vector<bool>>(); }
+std::vector<std::vector<bool>> ConwaysLife::getGrid() {
+    return *grid;
+}
 
 void newGen() {}
