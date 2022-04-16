@@ -9,13 +9,13 @@ using namespace std;
 
 class ConwaysLife {
 private:
-    vector<vector<bool>> *grig;
+    vector<vector<bool>> *grid;
 
 public:
     ConwaysLife();
     ConwaysLife(const ConwaysLife &cl);
 
-    void setGrid(const vector<vector<bool>> &_grig);
+    void setGrid(const vector<vector<bool>> &_grid);
     void getGrid(vector<vector<bool>> &_grid);
 
     void newGen();
