@@ -105,3 +105,23 @@ TEST(conways_life, grid_is_torus) {
     std::vector<std::vector<bool>> life_grid = life.getGrid();
     ASSERT_EQ(new_grid, life_grid);
 }
+
+TEST(conways_life, can_get_grid_is_stable) {
+    ConwaysLife life;
+    std::vector<std::vector<bool>> grid{ {0, 0, 0, 0, 0, 0},
+                                         {0, 0, 1, 1, 0, 0},
+                                         {0, 1, 0, 0, 1, 0},
+                                         {0, 0, 1, 1, 0, 0},
+                                         {0, 0, 0, 0, 0, 0} };
+    ASSERT_EQ(true, life.isStable());
+}
+
+TEST(conways_life, can_get_grid_is_periodic_per_2) {
+    ConwaysLife life;
+    std::vector<std::vector<bool>> grid{ {0, 0, 0, 0, 0},
+                                         {0, 0, 1, 0, 0},
+                                         {0, 0, 1, 0, 0},
+                                         {0, 0, 1, 0, 0},
+                                         {0, 0, 0, 0, 0} };
+    ASSERT_EQ(true, life.isPeriodic2());
+}

@@ -19,6 +19,9 @@ class ConwaysLife {
     void setGrid(const std::vector<std::vector<bool>> &_grid);
     std::vector<std::vector<bool>> getGrid();
 
+    bool isStable();
+    bool isPeriodic2();
+
     void nextGen();
 };
 

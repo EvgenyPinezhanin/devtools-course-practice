@@ -51,6 +51,14 @@ std::vector<std::vector<bool>> ConwaysLife::getGrid() {
     return *grid;
 }
 
+bool ConwaysLife::isStable() {
+    return false;
+}
+
+bool ConwaysLife::isPeriodic2() {
+    return false;
+}
+
 void ConwaysLife::nextGen() {
     std::vector<std::vector<bool>> *tmp_grid =
         new std::vector<std::vector<bool>>(*grid);
