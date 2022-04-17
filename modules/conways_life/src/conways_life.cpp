@@ -61,4 +61,5 @@ void ConwaysLife::nextGen() {
         }
     }
     *grid = *tmp_grid;
+    delete tmp_grid;
 }
