@@ -45,18 +45,6 @@ TEST(conways_life, can_set_grid_and_get_grid) {
     ASSERT_EQ(grid, life_grid);
 }
 
-TEST(conways_life, can_set_grid_only_rectangle) {
-    ConwaysLife life;
-    std::vector<std::vector<bool>> grid{ {1, 0},
-                                         {0, 0, 1, 0, 0},
-                                         {0, 0, 0},
-                                         {0, 1, 0, 0},
-                                         {0, 0, 0, 1, 0} };
-    life.setGrid(grid);
-    std::vector<std::vector<bool>> life_grid = life.getGrid();
-    ASSERT_EQ(grid, life_grid);
-}
-
 TEST(conways_life, next_gen_of_grid) {
     ConwaysLife life;
     std::vector<std::vector<bool>> grid{ {0, 0, 0, 0, 0},
