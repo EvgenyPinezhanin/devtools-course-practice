@@ -10,6 +10,7 @@ class ConwaysLife {
     std::vector<std::vector<bool>> *grid;
 
     void initGrid();
+    int numberLivingNeighbours(int x, int y, int width, int height);
 
  public:
     ConwaysLife();

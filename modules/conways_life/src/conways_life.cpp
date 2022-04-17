@@ -11,6 +11,18 @@ void ConwaysLife::initGrid() {
     }
 }
 
+int ConwaysLife::numberLivingNeighbours(int x, int y, int width, int height) {
+    int number = 0;
+    for (int i = x - 1; i <= x + 1; i++) {
+        for (int j = y - 1; j <= y + 1; j++) {
+            if (i != x || j != y) {
+                number += (*grid)[(j + height) % height][(i + width) % width];
+            }
+        }
+    }
+    return number;
+}
+
 ConwaysLife::ConwaysLife() : grid(new std::vector<std::vector<bool>>) {
     initGrid();
 }
@@ -29,6 +41,24 @@ std::vector<std::vector<bool>> ConwaysLife::getGrid() {
 }
 
 void ConwaysLife::nextGen() {
-    // code
-    initGrid();
+    std::vector<std::vector<bool>> *tmp_grid = new std::vector<std::vector<bool>>(*grid);
+    int height = grid->size(), width = (*grid)[0].size();
+    int liveNeighbours;
+    if (height )
+
+    for (int i = 0; i < height; i++) {
+        for (int j = 0; j < width; j++) {
+            liveNeighbours = numberLivingNeighbours(j, i, width, height);
+            if (!(*grid)[i][j]) {
+                if (liveNeighbours == 3) {
+                    (*tmp_grid)[i][j] = true;
+                }
+            } else {
+                if (liveNeighbours < 2 || liveNeighbours > 3) {
+                    (*tmp_grid)[i][j] = false;
+                }
+            }
+        }
+    }
+    *grid = *tmp_grid;
 }

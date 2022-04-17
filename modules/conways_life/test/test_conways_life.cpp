@@ -72,25 +72,6 @@ TEST(conways_life, next_gen_of_empty_grid) {
     ASSERT_EQ(grid, life_grid);
 }
 
-TEST(conways_life, next_gen_of_grid_1_by_1) {
-    ConwaysLife life;
-    std::vector<std::vector<bool>> grid{ {1} };
-    life.setGrid(grid);
-    life.nextGen();
-    std::vector<std::vector<bool>> life_grid = life.getGrid();
-    ASSERT_EQ(grid, life_grid);
-}
-
-TEST(conways_life, next_gen_of_grid_1_by_2) {
-    ConwaysLife life;
-    std::vector<std::vector<bool>> grid{ {1, 1} };
-    life.setGrid(grid);
-    std::vector<std::vector<bool>> new_grid{ {0, 0} };
-    life.nextGen();
-    std::vector<std::vector<bool>> life_grid = life.getGrid();
-    ASSERT_EQ(new_grid, life_grid);
-}
-
 TEST(conways_life, grid_is_torus) {
     ConwaysLife life;
     std::vector<std::vector<bool>> grid{ {1, 1, 1, 0, 0},
