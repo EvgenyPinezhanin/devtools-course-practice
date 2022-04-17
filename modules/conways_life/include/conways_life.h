@@ -10,7 +10,9 @@ class ConwaysLife {
     std::vector<std::vector<bool>> *grid;
 
     void initGrid();
-    int numberLivingNeighbours(int x, int y, int width, int height);
+    int numberLivingNeighbours(int x, int y, int width, int height,
+      std::vector<std::vector<bool>> *_grid) const;
+    void generation(std::vector<std::vector<bool>> *_grid) const;
 
  public:
     ConwaysLife();
@@ -19,8 +21,8 @@ class ConwaysLife {
     void setGrid(const std::vector<std::vector<bool>> &_grid);
     std::vector<std::vector<bool>> getGrid();
 
-    bool isStable();
-    bool isPeriodic2();
+    bool isStable() const;
+    bool isPeriodic2() const;
 
     void nextGen();
 };
