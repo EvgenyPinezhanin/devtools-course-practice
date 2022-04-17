@@ -27,12 +27,7 @@ int ConwaysLife::numberLivingNeighbours(int x, int y, int width, int height,
 void ConwaysLife::generation(std::vector<std::vector<bool>> *_grid) const {
     std::vector<std::vector<bool>> *tmp_grid =
         new std::vector<std::vector<bool>>(*_grid);
-    int height = _grid->size(), width;
-    if (height == 0) {
-        width = 0;
-    } else {
-        width = (*_grid)[0].size();
-    }
+    int height = _grid->size(), width = (*_grid)[0].size();
     int liveNeighbours;
 
     for (int i = 0; i < height; i++) {

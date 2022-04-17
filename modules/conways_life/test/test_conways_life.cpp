@@ -113,7 +113,19 @@ TEST(conways_life, can_get_grid_is_stable) {
                                          {0, 1, 0, 0, 1, 0},
                                          {0, 0, 1, 1, 0, 0},
                                          {0, 0, 0, 0, 0, 0} };
+    life.setGrid(grid);
     ASSERT_EQ(true, life.isStable());
+}
+
+TEST(conways_life, can_get_grid_isnt_stable) {
+    ConwaysLife life;
+    std::vector<std::vector<bool>> grid{ {1, 0, 0, 0, 0, 0},
+                                         {0, 0, 1, 1, 0, 0},
+                                         {0, 1, 0, 0, 1, 0},
+                                         {1, 0, 1, 1, 0, 0},
+                                         {1, 0, 0, 0, 0, 0} };
+    life.setGrid(grid);
+    ASSERT_EQ(false, life.isStable());
 }
 
 TEST(conways_life, can_get_grid_is_periodic_per_2) {
@@ -123,5 +135,17 @@ TEST(conways_life, can_get_grid_is_periodic_per_2) {
                                          {0, 0, 1, 0, 0},
                                          {0, 0, 1, 0, 0},
                                          {0, 0, 0, 0, 0} };
+    life.setGrid(grid);
     ASSERT_EQ(true, life.isPeriodic2());
+}
+
+TEST(conways_life, can_get_grid_isnt_periodic_per_2) {
+    ConwaysLife life;
+    std::vector<std::vector<bool>> grid{ {0, 0, 0, 0, 0},
+                                         {0, 0, 1, 1, 0},
+                                         {0, 1, 1, 1, 0},
+                                         {0, 0, 1, 0, 0},
+                                         {0, 0, 0, 0, 0} };
+    life.setGrid(grid);
+    ASSERT_EQ(false, life.isPeriodic2());
 }
