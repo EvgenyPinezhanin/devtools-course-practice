@@ -45,6 +45,31 @@ TEST(conways_life, can_set_grid_and_get_grid) {
     ASSERT_EQ(grid, life_grid);
 }
 
+// TEST(conways_life, can_set_grid_only_rectangle) {
+//     ConwaysLife life;
+//     std::vector<std::vector<bool>> grid{ {0, 1, 0, 0},
+//                                          {0, 0, 0},
+//                                          {0, 0, 0, 0, 1},
+//                                          {0, 1, 0, 0, 0},
+//                                          {0, 1, 0} };
+//     ASSERT_ANY_THROW(life.setGrid(grid));
+// }
+// 
+// TEST(conways_life, cant_set_grid_height_less_3) {
+//     ConwaysLife life;
+//     std::vector<std::vector<bool>> grid{ {0, 1, 0, 0},
+//                                          {0, 0, 0, 1} }
+//     ASSERT_ANY_THROW(life.setGrid(grid));
+// }
+// 
+// TEST(conways_life, cant_set_grid_width_less_3) {
+//     ConwaysLife life;
+//     std::vector<std::vector<bool>> grid{ {0, 1},
+//                                          {0, 0},
+//                                          {1, 1} }
+//     ASSERT_ANY_THROW(life.setGrid(grid));
+// }
+
 TEST(conways_life, next_gen_of_grid) {
     ConwaysLife life;
     std::vector<std::vector<bool>> grid{ {0, 0, 0, 0, 0},

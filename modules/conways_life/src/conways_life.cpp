@@ -43,7 +43,12 @@ std::vector<std::vector<bool>> ConwaysLife::getGrid() {
 void ConwaysLife::nextGen() {
     std::vector<std::vector<bool>> *tmp_grid =
         new std::vector<std::vector<bool>>(*grid);
-    int height = grid->size(), width = (*grid)[0].size();
+    int height = grid->size(), width;
+    if (height == 0) {
+        width = 0;
+    } else {
+        width = (*grid)[0].size();
+    }
     int liveNeighbours;
 
     for (int i = 0; i < height; i++) {
