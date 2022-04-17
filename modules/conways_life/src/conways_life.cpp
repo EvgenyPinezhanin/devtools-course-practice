@@ -33,6 +33,17 @@ ConwaysLife::ConwaysLife(const ConwaysLife &cl)
 }
 
 void ConwaysLife::setGrid(const std::vector<std::vector<bool>> &_grid) {
+    if (_grid.size() < 3) {
+        throw "Error! Height less three";
+    }
+    for (int i = 1; i < _grid.size(); i++) {
+        if (_grid[0].size() != _grid[i].size()) {
+            throw "Error! Grid is not rectangle";
+        }
+    }
+    if (_grid[0].size() < 3) {
+        throw "Error! Width less three";
+    }
     *grid = _grid;
 }
 
