@@ -22,7 +22,7 @@ class ConwaysLife {
     std::vector<std::vector<bool>> getGrid();
 
     bool isStable() const;
-    bool isPeriodic2() const;
+    int isPeriodic(int max_per) const;
 
     void nextGen();
 };

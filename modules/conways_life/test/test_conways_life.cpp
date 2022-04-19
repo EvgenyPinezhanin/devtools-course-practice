@@ -128,7 +128,7 @@ TEST(conways_life, can_get_grid_isnt_stable) {
     ASSERT_EQ(false, life.isStable());
 }
 
-TEST(conways_life, can_get_grid_is_periodic_per_2) {
+TEST(conways_life, can_get_grid_is_periodic_2) {
     ConwaysLife life;
     std::vector<std::vector<bool>> grid{ {0, 0, 0, 0, 0},
                                          {0, 0, 1, 0, 0},
@@ -136,10 +136,10 @@ TEST(conways_life, can_get_grid_is_periodic_per_2) {
                                          {0, 0, 1, 0, 0},
                                          {0, 0, 0, 0, 0} };
     life.setGrid(grid);
-    ASSERT_EQ(true, life.isPeriodic2());
+    ASSERT_EQ(2, life.isPeriodic(5));
 }
 
-TEST(conways_life, can_get_grid_isnt_periodic_per_2) {
+TEST(conways_life, isnt_periodic_return_minus_one) {
     ConwaysLife life;
     std::vector<std::vector<bool>> grid{ {0, 0, 0, 0, 0},
                                          {0, 0, 1, 1, 0},
@@ -147,5 +147,56 @@ TEST(conways_life, can_get_grid_isnt_periodic_per_2) {
                                          {0, 0, 1, 0, 0},
                                          {0, 0, 0, 0, 0} };
     life.setGrid(grid);
-    ASSERT_EQ(false, life.isPeriodic2());
+    ASSERT_EQ(-1, life.isPeriodic(5));
+}
+
+TEST(conways_life, can_get_grid_is_periodic_3) {
+    ConwaysLife life;
+    std::vector<std::vector<bool>> grid{ {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                                         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                                         {0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0},
+                                         {0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0},
+                                         {0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0},
+                                         {0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0},
+                                         {0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0},
+                                         {0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0},
+                                         {0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0},
+                                         {0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0},
+                                         {0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0},
+                                         {0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0},
+                                         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                                         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0} };
+    life.setGrid(grid);
+    ASSERT_EQ(3, life.isPeriodic(5));
+}
+
+TEST(conways_life, grid_is_periodic_3_return_minus_one_if_arg_less_per) {
+    ConwaysLife life;
+    std::vector<std::vector<bool>> grid{ {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                                         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                                         {0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0},
+                                         {0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0},
+                                         {0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0},
+                                         {0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0},
+                                         {0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0},
+                                         {0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0},
+                                         {0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0},
+                                         {0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0},
+                                         {0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0},
+                                         {0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0},
+                                         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                                         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0} };
+    life.setGrid(grid);
+    ASSERT_EQ(3, life.isPeriodic(2));
+}
+
+TEST(conways_life, grid_is_periodic_1_is_stable) {
+    ConwaysLife life;
+    std::vector<std::vector<bool>> grid{ {1, 0, 0, 0, 0, 0},
+                                         {0, 0, 1, 1, 0, 0},
+                                         {0, 1, 0, 0, 1, 0},
+                                         {1, 0, 1, 1, 0, 0},
+                                         {1, 0, 0, 0, 0, 0} };
+    life.setGrid(grid);
+    ASSERT_EQ(1, life.isPeriodic(5));
 }

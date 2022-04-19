@@ -88,7 +88,7 @@ bool ConwaysLife::isStable() const {
     return false;
 }
 
-bool ConwaysLife::isPeriodic2() const {
+int ConwaysLife::isPeriodic(int max_per) const {
     std::vector<std::vector<bool>> *tmp_grid =
         new std::vector<std::vector<bool>>(*grid);
     generation(tmp_grid);
