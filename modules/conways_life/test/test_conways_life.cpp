@@ -200,3 +200,14 @@ TEST(conways_life, grid_is_periodic_1_is_stable) {
     life.setGrid(grid);
     ASSERT_EQ(1, life.isPeriodic(5));
 }
+
+TEST(conways_life, if_max_per_in_periodic_less_one_throw) {
+    ConwaysLife life;
+    std::vector<std::vector<bool>> grid{ {1, 0, 0, 0, 0, 0},
+                                         {0, 0, 1, 1, 0, 0},
+                                         {0, 1, 0, 0, 1, 0},
+                                         {1, 0, 1, 1, 0, 0},
+                                         {1, 0, 0, 0, 0, 0} };
+    life.setGrid(grid);
+    ASSERT_ANY_THROW(life.isPeriodic(0));
+}
