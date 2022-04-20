@@ -83,7 +83,40 @@ TEST(conways_life, next_gen_of_grid) {
                                              {0, 1, 0, 1, 0},
                                              {0, 1, 1, 1, 0},
                                              {0, 0, 0, 0, 0} };
-    life.nextGen();
+    life.nextGen(1);
+    std::vector<std::vector<bool>> life_grid = life.getGrid();
+    ASSERT_EQ(new_grid, life_grid);
+}
+
+TEST(conways_life, if_nextgen_less_one_throw) {
+    ConwaysLife life;
+    std::vector<std::vector<bool>> grid{ {0, 0, 0, 0, 0},
+                                         {0, 0, 1, 0, 0},
+                                         {0, 1, 1, 1, 0},
+                                         {0, 0, 1, 0, 0},
+                                         {0, 0, 0, 0, 0} };
+    life.setGrid(grid);
+    ASSERT_ANY_THROW(life.nextGen(0));
+}
+
+TEST(conways_life, next_gen_2_of_grid) {
+    ConwaysLife life;
+    std::vector<std::vector<bool>> grid{ {0, 0, 0, 0, 0, 0, 0},
+                                         {0, 0, 0, 0, 0, 0, 0},
+                                         {0, 0, 0, 1, 0, 0, 0},
+                                         {0, 0, 1, 1, 1, 0, 0},
+                                         {0, 0, 0, 1, 0, 0, 0},
+                                         {0, 0, 0, 0, 0, 0, 0},
+                                         {0, 0, 0, 0, 0, 0, 0} };
+    life.setGrid(grid);
+    std::vector<std::vector<bool>> new_grid{ {0, 0, 0, 0, 0, 0, 0},
+                                             {0, 0, 0, 1, 0, 0, 0},
+                                             {0, 0, 1, 0, 1, 0, 0},
+                                             {0, 1, 0, 0, 0, 1, 0},
+                                             {0, 0, 1, 0, 1, 0, 0},
+                                             {0, 0, 0, 1, 0, 0, 0},
+                                             {0, 0, 0, 0, 0, 0, 0} };
+    life.nextGen(2);
     std::vector<std::vector<bool>> life_grid = life.getGrid();
     ASSERT_EQ(new_grid, life_grid);
 }
@@ -101,7 +134,7 @@ TEST(conways_life, grid_is_torus) {
                                              {1, 0, 1, 0, 0},
                                              {0, 1, 0, 0, 0},
                                              {0, 1, 0, 0, 0} };
-    life.nextGen();
+    life.nextGen(1);
     std::vector<std::vector<bool>> life_grid = life.getGrid();
     ASSERT_EQ(new_grid, life_grid);
 }

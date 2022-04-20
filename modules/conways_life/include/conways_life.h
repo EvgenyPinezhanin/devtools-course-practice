@@ -24,7 +24,7 @@ class ConwaysLife {
     bool isStable() const;
     int isPeriodic(int max_per) const;
 
-    void nextGen();
+    void nextGen(int gen);
 };
 
 #endif  // MODULES_CONWAYS_LIFE_INCLUDE_CONWAYS_LIFE_H_

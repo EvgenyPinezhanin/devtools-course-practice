@@ -89,7 +89,7 @@ bool ConwaysLife::isStable() const {
 }
 
 int ConwaysLife::isPeriodic(int max_per) const {
-    if (max_per < 1) throw "Error! period less one";
+    if (max_per < 1) throw "Error! Period less one";
     std::vector<std::vector<bool>> *tmp_grid =
         new std::vector<std::vector<bool>>(*grid);
     for (int i = 0; i < max_per; i++) {
@@ -103,7 +103,7 @@ int ConwaysLife::isPeriodic(int max_per) const {
     return -1;
 }
 
-void ConwaysLife::nextGen() {
+void ConwaysLife::nextGen(int gen) {
     std::vector<std::vector<bool>> *tmp_grid =
         new std::vector<std::vector<bool>>(*grid);
     generation(tmp_grid);
