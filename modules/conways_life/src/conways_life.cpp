@@ -104,9 +104,12 @@ int ConwaysLife::isPeriodic(int max_per) const {
 }
 
 void ConwaysLife::nextGen(int gen) {
+    if (gen < 1) throw "Error! Gen less one";
     std::vector<std::vector<bool>> *tmp_grid =
         new std::vector<std::vector<bool>>(*grid);
-    generation(tmp_grid);
+    for (int i = 0; i < gen; i++) {
+        generation(tmp_grid);
+    }
     *grid = *tmp_grid;
     delete tmp_grid;
 }
