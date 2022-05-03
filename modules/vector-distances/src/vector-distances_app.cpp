@@ -3,8 +3,8 @@
 #include "include/vector-distances_app.h"
 #include <string>
 
-Application::Application(){}
+Application::Application() {}
 
-std::string Application::operator()(int argc, const char** argv){
+std::string Application::operator()(int argc, const char** argv) {
     return std::string();
 }
