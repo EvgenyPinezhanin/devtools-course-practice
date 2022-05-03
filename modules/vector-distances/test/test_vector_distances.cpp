@@ -261,7 +261,7 @@ TEST(Orlov_Maksim_VectorDistanceTest, L4) {
     EXPECT_NEAR(3.146, res, 0.01);
 }
 
-TEST(Pinezhanin_Evgeny_VectorDistanceTest, 
+TEST(Pinezhanin_Evgeny_VectorDistanceTest,
     cant_calculate_Lp_distance_between_vectors_if_p_less_one) {
     // Arrange
     std::vector<float> _v1 = { 1.0, 2.0, 3.0 };
