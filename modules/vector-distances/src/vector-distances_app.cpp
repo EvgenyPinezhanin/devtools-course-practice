@@ -120,8 +120,6 @@ std::string Application::operator()(int argc, const char** argv) {
         case 1: case 2: case 3: case 4:
                 stream << v1.L(args.metric, v2) 
                        << " with metric L" << args.metric;
-                break;
-        break;
     }
 
     message = stream.str();
