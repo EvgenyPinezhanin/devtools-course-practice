@@ -39,7 +39,7 @@ std::vector<float> parseVector(const char* arg) {
     char* end;
     float num;
 
-    for (int i = 0; i < strVec.size(); i++) {
+    for (unsigned int i = 0; i < strVec.size(); i++) {
         if (strVec[i] == ',') {
             if (strFloat == "") {
                 throw std::string("Wrong vector format");
@@ -105,12 +105,12 @@ std::string Application::operator()(int argc, const char** argv) {
 
     std::ostringstream stream;
     stream << "v1 = (";
-    for (int i = 0; i < args.vec1.size() - 1; i++) {
+    for (unsigned int i = 0; i < args.vec1.size() - 1; i++) {
         stream << args.vec1[i] << ", ";
     }
     stream << args.vec1[args.vec1.size() - 1] << ")\n";
     stream << "v2 = (";
-    for (int i = 0; i < args.vec2.size() - 1; i++) {
+    for (unsigned int i = 0; i < args.vec2.size() - 1; i++) {
         stream << args.vec2[i] << ", ";
     }
     stream << args.vec2[args.vec2.size() - 1] << ")\n";
