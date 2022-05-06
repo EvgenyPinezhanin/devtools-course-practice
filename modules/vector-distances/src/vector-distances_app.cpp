@@ -4,6 +4,7 @@
 #include "include/vector-distances_app.h"
 
 #include <string>
+#include <vector>
 #include <sstream>
 #include <cstdlib>
 
@@ -118,7 +119,7 @@ std::string Application::operator()(int argc, const char** argv) {
         case 0: stream << v1.Linf(v2) << " with metric Linf";
                 break;
         case 1: case 2: case 3: case 4:
-                stream << v1.L(args.metric, v2) 
+                stream << v1.L(args.metric, v2)
                        << " with metric L" << args.metric;
     }
 
