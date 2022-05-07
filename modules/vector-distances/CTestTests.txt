@@ -65,7 +65,7 @@ add_test(
     COMMAND ${APPLICATION} 1.5,3.3,4.7 2.3,2.0,8.5 Linf
 )
 set_tests_properties (${prefix}_can_Calculate_Distance_In_Linf PROPERTIES
-    PASS_REGULAR_EXPRESSION "p(v1, v2) = 3.8 with metric Linf"
+    PASS_REGULAR_EXPRESSION "p(v1, v2) = 3.8 with metric Linf\n*"
     LABELS "${MODULE}")
 
 add_test(
@@ -89,7 +89,7 @@ add_test(
     COMMAND ${APPLICATION} 1.5,3.3,4.7 2.3,2.0,8.5 L3
 )
 set_tests_properties (${prefix}_can_Calculate_Distance_In_L3 PROPERTIES
-    PASS_REGULAR_EXPRESSION "p(v1, v2) = 3.30193 with metric L3"
+    PASS_REGULAR_EXPRESSION "p(v1, v2) = 3.86153 with metric L3"
     LABELS "${MODULE}")
 
 add_test(
@@ -97,5 +97,5 @@ add_test(
     COMMAND ${APPLICATION} 1.5,3.3,4.7 2.3,2.0,8.5 L4
 )
 set_tests_properties (${prefix}_can_Calculate_Distance_In_L4 PROPERTIES
-    PASS_REGULAR_EXPRESSION "p(v1, v2) = 3.14635 with metric L4"
+    PASS_REGULAR_EXPRESSION "p(v1, v2) = 3.81479 with metric L4"
     LABELS "${MODULE}")
