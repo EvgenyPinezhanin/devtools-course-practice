@@ -113,7 +113,7 @@ std::string Application::operator()(int argc, const char** argv) {
                        << " with metric L" << args.metric << std::endl;
     }
 
-    stream << "v1 = (";
+    stream << std::endl << "v1 = (";
     for (unsigned int i = 0; i < args.vec1.size() - 1; i++) {
         stream << args.vec1[i] << ", ";
     }
