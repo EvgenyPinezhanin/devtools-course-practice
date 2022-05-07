@@ -104,6 +104,16 @@ std::string Application::operator()(int argc, const char** argv) {
     Vector v2(args.vec2);
 
     std::ostringstream stream;
+    stream << args.vec2[args.vec2.size() - 1] << ")\n";
+    stream << "p(v1, v2) = ";
+    switch (args.metric) {
+        case 0: stream << v1.Linf(v2) << " with metric Linf" << endl;
+                break;
+        case 1: case 2: case 3: case 4:
+                stream << v1.L(args.metric, v2)
+                       << " with metric L" << args.metric << endl;
+    }
+
     stream << "v1 = (";
     for (unsigned int i = 0; i < args.vec1.size() - 1; i++) {
         stream << args.vec1[i] << ", ";
@@ -112,15 +122,6 @@ std::string Application::operator()(int argc, const char** argv) {
     stream << "v2 = (";
     for (unsigned int i = 0; i < args.vec2.size() - 1; i++) {
         stream << args.vec2[i] << ", ";
-    }
-    stream << args.vec2[args.vec2.size() - 1] << ")\n";
-    stream << "p(v1, v2) = ";
-    switch (args.metric) {
-        case 0: stream << v1.Linf(v2) << " with metric Linf";
-                break;
-        case 1: case 2: case 3: case 4:
-                stream << v1.L(args.metric, v2)
-                       << " with metric L" << args.metric;
     }
 
     message = stream.str();
