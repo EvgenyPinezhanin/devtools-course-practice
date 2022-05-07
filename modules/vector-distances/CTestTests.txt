@@ -93,9 +93,9 @@ set_tests_properties (${prefix}_can_Calculate_Distance_In_L3 PROPERTIES
     LABELS "${MODULE}")
 
 add_test(
-    NAME ${prefix}_can_Calculate_Distance_In_L3
-    COMMAND ${APPLICATION} 1.5,3.3,4.7 2.3,2.0,8.5 L3
+    NAME ${prefix}_can_Calculate_Distance_In_L4
+    COMMAND ${APPLICATION} 1.5,3.3,4.7 2.3,2.0,8.5 L4
 )
-set_tests_properties (${prefix}_can_Calculate_Distance_In_L3 PROPERTIES
-    PASS_REGULAR_EXPRESSION "p(v1, v2) = 3.14635 with metric L3"
+set_tests_properties (${prefix}_can_Calculate_Distance_In_L4 PROPERTIES
+    PASS_REGULAR_EXPRESSION "p(v1, v2) = 3.14635 with metric L4"
     LABELS "${MODULE}")
