@@ -57,7 +57,7 @@ add_test(
     COMMAND ${APPLICATION} 1.1,3.3 2.3,2.0 Lint
 )
 set_tests_properties (${prefix}_can_Detect_Wrong_Metric_Format PROPERTIES
-    PASS_REGULAR_EXPRESSION Wrong metric format!"
+    PASS_REGULAR_EXPRESSION "Wrong metric format!"
     LABELS "${MODULE}")
 
 add_test(
@@ -65,7 +65,7 @@ add_test(
     COMMAND ${APPLICATION} 1.5,3.3,4.7 2.3,2.0,8.5 Linf
 )
 set_tests_properties (${prefix}_can_Calculate_Distance_In_Linf PROPERTIES
-    PASS_REGULAR_EXPRESSION p(v1, v2) = 3.8 with metric Linf"
+    PASS_REGULAR_EXPRESSION "p(v1, v2) = 3.8 with metric Linf"
     LABELS "${MODULE}")
 
 add_test(
@@ -73,7 +73,7 @@ add_test(
     COMMAND ${APPLICATION} 1.5,3.3,4.7 2.3,2.0,8.5 L1
 )
 set_tests_properties (${prefix}_can_Calculate_Distance_In_L1 PROPERTIES
-    PASS_REGULAR_EXPRESSION p(v1, v2) = 5.9 with metric L1"
+    PASS_REGULAR_EXPRESSION "p(v1, v2) = 5.9 with metric L1"
     LABELS "${MODULE}")
 
 add_test(
@@ -81,7 +81,7 @@ add_test(
     COMMAND ${APPLICATION} 1.5,4.0,5.5 2.5,2.0,8.5 L2
 )
 set_tests_properties (${prefix}_can_Calculate_Distance_In_L2 PROPERTIES
-    PASS_REGULAR_EXPRESSION p(v1, v2) = 3.74166 with metric L2"
+    PASS_REGULAR_EXPRESSION "p(v1, v2) = 3.74166 with metric L2"
     LABELS "${MODULE}")
 
 add_test(
@@ -89,7 +89,7 @@ add_test(
     COMMAND ${APPLICATION} 1.5,3.3,4.7 2.3,2.0,8.5 L3
 )
 set_tests_properties (${prefix}_can_Calculate_Distance_In_L3 PROPERTIES
-    PASS_REGULAR_EXPRESSION p(v1, v2) = 3.30193 with metric L3"
+    PASS_REGULAR_EXPRESSION "p(v1, v2) = 3.30193 with metric L3"
     LABELS "${MODULE}")
 
 add_test(
@@ -97,5 +97,5 @@ add_test(
     COMMAND ${APPLICATION} 1.5,3.3,4.7 2.3,2.0,8.5 L3
 )
 set_tests_properties (${prefix}_can_Calculate_Distance_In_L3 PROPERTIES
-    PASS_REGULAR_EXPRESSION p(v1, v2) = 3.14635 with metric L3"
+    PASS_REGULAR_EXPRESSION "p(v1, v2) = 3.14635 with metric L3"
     LABELS "${MODULE}")
