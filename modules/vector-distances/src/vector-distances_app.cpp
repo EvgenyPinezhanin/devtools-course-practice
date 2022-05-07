@@ -106,23 +106,23 @@ std::string Application::operator()(int argc, const char** argv) {
     std::ostringstream stream;
     stream << "p(v1, v2) = ";
     switch (args.metric) {
-        case 0: stream << v1.Linf(v2) << " with metric Linf" << std::endl;
+        case 0: stream << v1.Linf(v2) << " with metric Linf";
                 break;
         case 1: case 2: case 3: case 4:
                 stream << v1.L(args.metric, v2)
-                       << " with metric L" << args.metric << std::endl;
+                       << " with metric L" << args.metric;
     }
 
-    stream << std::endl << "v1 = (";
-    for (unsigned int i = 0; i < args.vec1.size() - 1; i++) {
-        stream << args.vec1[i] << ", ";
-    }
-    stream << args.vec1[args.vec1.size() - 1] << ")\n";
-    stream << "v2 = (";
-    for (unsigned int i = 0; i < args.vec2.size() - 1; i++) {
-        stream << args.vec2[i] << ", ";
-    }
-    stream << args.vec2[args.vec2.size() - 1] << ")\n";
+    // stream << std::endl << "v1 = (";
+    // for (unsigned int i = 0; i < args.vec1.size() - 1; i++) {
+    //     stream << args.vec1[i] << ", ";
+    // }
+    // stream << args.vec1[args.vec1.size() - 1] << ")\n";
+    // stream << "v2 = (";
+    // for (unsigned int i = 0; i < args.vec2.size() - 1; i++) {
+    //     stream << args.vec2[i] << ", ";
+    // }
+    // stream << args.vec2[args.vec2.size() - 1] << ")\n";
 
     message = stream.str();
 
