@@ -42,7 +42,7 @@ std::vector<float> parseVector(const char* arg) {
     for (unsigned int i = 0; i < strVec.size(); i++) {
         if (strVec[i] == ',') {
             if (strFloat == "") {
-                throw std::string("Wrong vector format");
+                throw std::string("Wrong vector format!");
             }
             num = strtof(strFloat.c_str(), &end);
             if (end[0]) {
