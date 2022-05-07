@@ -65,7 +65,7 @@ add_test(
     COMMAND ${APPLICATION} 1.5,3.3,4.7 2.3,2.0,8.5 Linf
 )
 set_tests_properties (${prefix}_can_Calculate_Distance_In_Linf PROPERTIES
-    PASS_REGULAR_EXPRESSION "p(v1, v2) = 3.8 with metric Linf\n*"
+    PASS_REGULAR_EXPRESSION "p(v1, v2) = 3.8 with metric Linf"
     LABELS "${MODULE}")
 
 add_test(
