@@ -107,11 +107,11 @@ std::string Application::operator()(int argc, const char** argv) {
     stream << args.vec2[args.vec2.size() - 1] << ")\n";
     stream << "p(v1, v2) = ";
     switch (args.metric) {
-        case 0: stream << v1.Linf(v2) << " with metric Linf" << endl;
+        case 0: stream << v1.Linf(v2) << " with metric Linf" << std::endl;
                 break;
         case 1: case 2: case 3: case 4:
                 stream << v1.L(args.metric, v2)
-                       << " with metric L" << args.metric << endl;
+                       << " with metric L" << args.metric << std::endl;
     }
 
     stream << "v1 = (";
