@@ -26,9 +26,9 @@ void Vector::getData(std::vector<float>* v) {
 }
 
 float Vector::Linf(Vector v) {
-    if (data.size() != v.data.size()) 
+    if (data.size() != v.data.size())
         throw std::string("Vectors are of different sizes");
-    if (data.size() == 0) 
+    if (data.size() == 0)
         throw std::string("Vectors are empty");
     float maxDistance = 0;
     for (unsigned int i = 0; i < data.size(); i++) {
@@ -39,11 +39,11 @@ float Vector::Linf(Vector v) {
 }
 
 float Vector::L(int p, Vector v) {
-    if (data.size() != v.data.size()) 
+    if (data.size() != v.data.size())
         throw std::string("Vectors are of different sizes");
-    if (data.size() == 0) 
+    if (data.size() == 0)
         throw std::string("Vectors are empty");
-    if (p < 1) 
+    if (p < 1)
         throw std::string("Incorrect metric");
     float sum = 0;
     for (unsigned int i = 0; i < data.size(); i++) {
