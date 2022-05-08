@@ -2,6 +2,7 @@
 
 #include "include/vector-distances.h"
 #include <vector>
+#include <string>
 #include <cmath>
 
 
@@ -25,8 +26,10 @@ void Vector::getData(std::vector<float>* v) {
 }
 
 float Vector::Linf(Vector v) {
-    if (data.size() != v.data.size()) throw "Vectors are of different sizes";
-    if (data.size() == 0) throw "Vectors are empty";
+    if (data.size() != v.data.size()) 
+        throw std::string("Vectors are of different sizes");
+    if (data.size() == 0) 
+        throw std::string("Vectors are empty");
     float maxDistance = 0;
     for (unsigned int i = 0; i < data.size(); i++) {
         float distance = std::abs(data[i] - v.data[i]);
@@ -36,9 +39,12 @@ float Vector::Linf(Vector v) {
 }
 
 float Vector::L(int p, Vector v) {
-    if (data.size() != v.data.size()) throw "Vectors are of different sizes";
-    if (data.size() == 0) throw "Vectors are empty";
-    if (p < 1) throw "Incorrect metric";
+    if (data.size() != v.data.size()) 
+        throw std::string("Vectors are of different sizes");
+    if (data.size() == 0) 
+        throw std::string("Vectors are empty");
+    if (p < 1) 
+        throw std::string("Incorrect metric");
     float sum = 0;
     for (unsigned int i = 0; i < data.size(); i++) {
         sum += pow(std::abs(data[i] - v.data[i]), p);

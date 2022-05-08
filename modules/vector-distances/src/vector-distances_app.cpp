@@ -55,7 +55,7 @@ std::vector<float> parseVector(const char* arg) {
         }
     }
     if (strFloat == "") {
-        throw std::string("Wrong vector format");
+        throw std::string("Wrong vector format!");
     }
     num = strtof(strFloat.c_str(), &end);
     if (end[0]) {
@@ -95,8 +95,7 @@ std::string Application::operator()(int argc, const char** argv) {
         args.vec1 = parseVector(argv[1]);
         args.vec2 = parseVector(argv[2]);
         args.metric = parseMetric(argv[3]);
-    }
-    catch(std::string& str) {
+    } catch(std::string& str) {
         return str;
     }
 
@@ -105,13 +104,18 @@ std::string Application::operator()(int argc, const char** argv) {
 
     std::ostringstream stream;
     stream << "p(v1, v2) = ";
-    switch (args.metric) {
+    try {
+        switch (args.metric) {
         case 0: stream << v1.Linf(v2) << " with metric Linf";
-                break;
+            break;
         case 1: case 2: case 3: case 4:
-                stream << v1.L(args.metric, v2)
-                       << " with metric L" << args.metric;
+            stream << v1.L(args.metric, v2)
+                << " with metric L" << args.metric;
+        }
+    } catch (std::string& str) {
+        return str;
     }
+    
     stream << std::endl << "v1 = (";
     for (unsigned int i = 0; i < args.vec1.size() - 1; i++) {
         stream << args.vec1[i] << ", ";
