@@ -26,7 +26,7 @@ bool Application::validateNumberOfArguments(int argc, const char** argv) {
         help(argv[0]);
         return false;
     } else if (argc != 4) {
-        help(argv[0], "ERROR: Should be 3 arguments.\n\n");
+        help(argv[0], "ERROR: Should be 3 arguments!\n\n");
         return false;
     }
     return true;
@@ -112,17 +112,16 @@ std::string Application::operator()(int argc, const char** argv) {
                 stream << v1.L(args.metric, v2)
                        << " with metric L" << args.metric;
     }
-
-    // stream << std::endl << "v1 = (";
-    // for (unsigned int i = 0; i < args.vec1.size() - 1; i++) {
-    //     stream << args.vec1[i] << ", ";
-    // }
-    // stream << args.vec1[args.vec1.size() - 1] << ")\n";
-    // stream << "v2 = (";
-    // for (unsigned int i = 0; i < args.vec2.size() - 1; i++) {
-    //     stream << args.vec2[i] << ", ";
-    // }
-    // stream << args.vec2[args.vec2.size() - 1] << ")\n";
+    stream << std::endl << "v1 = (";
+    for (unsigned int i = 0; i < args.vec1.size() - 1; i++) {
+        stream << args.vec1[i] << ", ";
+    }
+    stream << args.vec1[args.vec1.size() - 1] << ")\n";
+    stream << "v2 = (";
+    for (unsigned int i = 0; i < args.vec2.size() - 1; i++) {
+        stream << args.vec2[i] << ", ";
+    }
+    stream << args.vec2[args.vec2.size() - 1] << ")\n";
 
     message = stream.str();
 
