@@ -115,7 +115,7 @@ std::string Application::operator()(int argc, const char** argv) {
     } catch (std::string& str) {
         return str;
     }
-    
+
     stream << std::endl << "v1 = (";
     for (unsigned int i = 0; i < args.vec1.size() - 1; i++) {
         stream << args.vec1[i] << ", ";
