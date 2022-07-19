@@ -1,0 +1,48 @@
+#############################################
+##### Testing
+#############################################
+
+set(prefix "${MODULE}")
+
+add_test(
+    NAME ${prefix}_can_Run
+    COMMAND ${APPLICATION}
+)
+set_tests_properties (${prefix}_can_Run PROPERTIES
+    LABELS "${MODULE}")
+
+add_test(
+    NAME ${prefix}_Сan_Print_Help_Without_Arguments
+    COMMAND ${APPLICATION}
+)
+
+set_tests_properties (${prefix}_Сan_Print_Help_Without_Arguments PROPERTIES
+    PASS_REGULAR_EXPRESSION "This is an application for add value in fibonachi heap"
+    LABELS "${MODULE}")
+
+add_test(
+    NAME ${prefix}_Сan_Check_2_Argument
+    COMMAND ${APPLICATION} 1 1
+)
+
+set_tests_properties (${prefix}_Сan_Check_2_Argument PROPERTIES
+    PASS_REGULAR_EXPRESSION "Error occured: Should be 1 arguments."
+    LABELS "${MODULE}")
+
+add_test(
+    NAME ${prefix}_Can_Check_Format
+    COMMAND ${APPLICATION} a
+)
+
+set_tests_properties (${prefix}_Can_Check_Format PROPERTIES
+    PASS_REGULAR_EXPRESSION "Error occured: Wrong argument type."
+    LABELS "${MODULE}")
+
+add_test(
+    NAME ${prefix}_Сan_Check_1_Argument
+    COMMAND ${APPLICATION} 1
+)
+
+set_tests_properties (${prefix}_Сan_Check_2_Argument PROPERTIES
+    PASS_REGULAR_EXPRESSION "1"
+    LABELS "${MODULE}")
